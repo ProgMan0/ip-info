@@ -3,6 +3,8 @@ try:
 	from bs4 import BeautifulSoup
 	import threading, requests
 except Exception as ex:
+	print('Installing requests ...')
+	os.system('requests')
 	os.system('pip install bs4')
 
 os.system('clear')
@@ -30,7 +32,7 @@ def prnt(r):
 def check_ip():
 	os.system('clear')
 	print(banner)
-	ip = input('Hапишите Ip >> ')
+	ip = input('\nHапишите Ip >> ')
 	res = requests.get('https://ipinfo.io/' + ip + '/json')
 	r = res.json()
 	prnt(r)
